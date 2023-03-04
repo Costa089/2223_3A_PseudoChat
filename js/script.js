@@ -20,3 +20,66 @@
         #se il campo di testo non è vuoto aggiungere il messaggio in coda agli altri del personaggio selezionato
 
 */
+
+init();
+
+
+function init() {
+
+    let utente = ``;
+
+    for (let i = 1; i < nomeUtenti; i++) {
+        utente += `<li id=` + i + ` + onclick=premuto(utente)>`;
+        if (genereUt[i] == "m") {
+            utente += `
+            <div class="material-symbols-outlined icone">
+                face
+            </div>      
+            `;
+        }
+        else {
+            utente += `
+            <div class="material-symbols-outlined icone">
+                face_3
+            </div>
+            `;
+        }
+        utente += nomeUtenti[i] + ` ` + cognomeUtenti[i].substring(0, 1) + `.`;
+
+        utente += `</li>`;
+    }
+
+    document.getElementById("listUtenti").innerHTML = utente;
+}
+
+function premuto(utent) {
+    let a = ` `;
+
+    if (genereUt[utent] == "m") {
+        a += `
+            <div class="material-symbols-outlined icone">
+                face
+            </div>      
+            `;
+    }
+    else {
+        a += `
+            <div class="material-symbols-outlined icone">
+                face_3
+            </div>
+            `;
+    }
+    a += `
+        <div>
+            <div id="divNome">` + nomeUtenti[utent]+ `  ` + cognomeUtenti[utent] `</div>
+            <div id="divUltimoMes">Oggi alle 9:45</div>
+        </div>`;
+}
+
+function invia(){
+    let a = ``;
+    let text = messaggi[i].value;
+    a += `<article class="mes ut1" >`+ messaggi +`</article>
+    <article class="mes ut2">`+ messaggi +`</article> `
+    document.getElementById("")
+}
